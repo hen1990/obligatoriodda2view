@@ -1,0 +1,23 @@
+/* Estilo para las estrellas/destellos */
+.cursor-star {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff0000; /* Rojo gamer */
+    border-radius: 40%;
+    pointer-events: none;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+    animation: star-fade-out 1s ease-out forwards;
+  }
+  
+  /* Animación de desvanecimiento */
+  @keyframes star-fade-out {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }

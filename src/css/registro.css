@@ -1,0 +1,103 @@
+/* General Body Styling for Register */
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    /* Fuente estilo gamer */
+    background-color: #1b1b1b;
+    /* Fondo oscuro */
+    color: #e0e0e0;
+    /* Texto en gris claro */
+}
+
+/* Container Styling */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register-form-container {
+    background-color: #2a2a2a;
+    /* Fondo más claro */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    /* Sombra roja */
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+form input,
+form select,
+form button {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+form input,
+form select {
+    background-color: #333333;
+    /* Campo gris oscuro */
+    color: #e0e0e0;
+    border: 1px solid #444444;
+}
+
+form input:focus,
+form select:focus {
+    border-color: #ff0000;
+    /* Borde rojo al seleccionar */
+    box-shadow: 0 0 5px #ff0000;
+}
+
+form button {
+    background-color: #ff0000;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+}
+
+form button:hover {
+    background-color: #d00000;
+    /* Botón rojo más oscuro */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+    /* Brillo rojo */
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    color: #ff0000;
+    /* Rojo intenso */
+    margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+    color: #ff0000;
+    text-decoration: none;
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: underline;
+}

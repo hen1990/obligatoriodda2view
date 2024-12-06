@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Register from './Login/Registro';
 import Login from './Login/Login';
 import Videojuegos from "./Pages/Videojuego";
-import './css/mouse.css';
+import Navbar from './navbar';
 
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
 
   return (
     <Router>
+      <Navbar user={user} />
       <Routes>
         <Route path="/" element={<Login setUser={setUser}  />} />
         <Route path="/registro" element={<Register />} />

@@ -9,6 +9,7 @@ import MiCarrito from './Pages/MiCarrito';
 import MisCompras from './Pages/MisCompras';
 import MiPerfil from './Pages/miPerfil';
 import Navbar from './navbar';
+import Categoria from './Pages/Categorias';
 
 
 function App() {
@@ -57,6 +58,8 @@ useEffect(() => {
         <Route path="/miCarrito" element={<MiCarrito user={user} carrito={carrito} setCarrito={setCarrito} />} />
         <Route path="/mis-compras" element={<MisCompras user={user} />} />
         <Route path="/miPerfil" element={<MiPerfil user={user} setUser={setUser} />} />
+
+        <Route path="/categoria" element={<Categoria />} />
        
       </Routes>
     </Router>

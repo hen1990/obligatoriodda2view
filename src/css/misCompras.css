@@ -1,0 +1,49 @@
+.mis-compras-container {
+    padding: 2rem;
+    color: #fff;
+    background-color: #2a2a2a;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    color: #ff0000;
+    margin-bottom: 1rem;
+}
+
+.compras-videojuegos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.compra-item {
+    display: flex;
+    gap: 1rem;
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.compra-imagen {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.compra-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.compra-info h2 {
+    color: #ff0000;
+    margin: 0;
+}
+
+.compra-info p {
+    margin: 0.5rem 0;
+}

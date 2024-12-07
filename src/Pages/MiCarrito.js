@@ -31,7 +31,7 @@ function MiCarrito({ user, carrito, setCarrito }) {
                 juego.id === id 
                     ? { ...juego, cantidad: juego.cantidad + 1 }
                     : juego
-            ).filter((juego) => juego.cantidad > 0) // Eliminar juegos con cantidad <= 0
+            )
         );
     };
 
@@ -41,7 +41,10 @@ function MiCarrito({ user, carrito, setCarrito }) {
 
     const calcularTotal = () => {
         return carrito.reduce((total, item) => {
-            const precioFinal = item.precio * (1 - (item.descuento || 0) / 100);
+            // Si el usuario es Premium, aplica el descuento, de lo contrario usa el precio normal
+            const precioFinal = isPremium 
+                ? item.precio * (1 - (item.descuento || 0) / 100) 
+                : item.precio;
             return total + precioFinal * item.cantidad;
         }, 0).toFixed(2);
     };

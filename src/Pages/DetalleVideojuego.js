@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import "../css/detalleVideoJuego.css";
 
 function DetalleVideojuego({ user, agregarAlCarrito }) {
+    
     const { id } = useParams();
     const [juego, setJuego] = useState(null);
 
@@ -11,6 +12,11 @@ function DetalleVideojuego({ user, agregarAlCarrito }) {
         const storedUser = localStorage.getItem('user');
         return storedUser ? JSON.parse(storedUser) : null;
     });
+
+    if (!existeUsuario) {
+        window.location.href = '/';
+    }
+    
     const isPremium = user.tipoUsuario.id === 2;
 
     useEffect(() => {

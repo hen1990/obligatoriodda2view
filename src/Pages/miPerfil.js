@@ -2,6 +2,16 @@ import React, { useState } from "react";
 import "../css/miPerfil.css";
 
 function MiPerfil({ user, setUser }) {
+    //Verificacion en el local Storage
+    const [existeUsuario, setexisteUsuario] = useState(() => {
+        const storedUser = localStorage.getItem('user');
+        return storedUser ? JSON.parse(storedUser) : null;
+    });
+
+    if (!existeUsuario) {
+        window.location.href = '/';
+    }
+
     const [nombre, setNombre] = useState(user.nombre);
     const [apellido, setApellido] = useState(user.apellido);
     const [tipoUsuario, setTipoUsuario] = useState(user.tipoUsuario.id);

@@ -6,6 +6,7 @@ import Login from './Login/Login';
 import Videojuegos from "./Pages/Videojuego";
 import DetalleVideojuego from './Pages/DetalleVideojuego';
 import MiCarrito from './Pages/MiCarrito';
+import MisCompras from './Pages/MisCompras';
 import MiPerfil from './Pages/miPerfil';
 import Navbar from './navbar';
 
@@ -54,7 +55,9 @@ useEffect(() => {
         <Route path="/videojuego" element={<Videojuegos user={user} />} />
         <Route path="/videojuego/:id" element={<DetalleVideojuego user={user} agregarAlCarrito={agregarAlCarrito} />} />
         <Route path="/miCarrito" element={<MiCarrito user={user} carrito={carrito} setCarrito={setCarrito} />} />
+        <Route path="/mis-compras" element={<MisCompras user={user} />} />
         <Route path="/miPerfil" element={<MiPerfil user={user} setUser={setUser} />} />
+       
       </Routes>
     </Router>
   );

@@ -30,6 +30,7 @@
     height: 100%;
     object-fit: cover;
     animation: glowAnimation 4s infinite;
+    border-radius: 10px;
 }
 
 @keyframes glowAnimation {

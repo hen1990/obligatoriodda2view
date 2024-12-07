@@ -27,7 +27,7 @@ function Navbar({ user, carrito }) {
 
     return (
         <nav className="navbar">
-            <Link to="/" className="navbar-logo">
+            <Link to="/videojuego" className="navbar-logo">
                 EmiGamesHG
             </Link>
             {user ? (
@@ -42,7 +42,7 @@ function Navbar({ user, carrito }) {
                 </button>
                 <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
                     <li>
-                        <Link to="/">Home</Link>
+                       {/*X si quiero poner algo */}
                     </li>
 
 
@@ -59,6 +59,9 @@ function Navbar({ user, carrito }) {
                         <>
                             <li>
                                 <Link to="/videojuego">Videojuegos</Link>
+                            </li>
+                            <li>
+                                <Link to="/mis-compras/">Mis Compras</Link>
                             </li>
                             <li>
                                 <Link to="/miCarrito">Mi carrito ({cantidad})</Link>

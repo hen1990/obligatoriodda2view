@@ -1,0 +1,147 @@
+/* Contenedor principal */
+.detalle-videojuego {
+    width: 100%; /* Ocupa todo el ancho */
+    padding-right: 15px; /* Padding lateral, igual al de Bootstrap */
+    padding-left: 15px;
+    padding-bottom: 50px;
+    margin-right: auto; /* Centra el contenido en caso de viewport grande */
+    margin-left: auto;
+}
+
+
+/* Contenido en dos columnas */
+.contenido-videojuego {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Esto ayuda con la responsividad */
+}
+
+/* Imagen del videojuego */
+.imagen-container {
+    flex: 1; /* Ocupa la mitad de la pantalla */
+    max-width: 50%;
+    padding-right: 20px;
+    height: 580px;
+}
+
+.imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: glowAnimation 4s infinite;
+}
+
+@keyframes glowAnimation {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+  }
+
+}
+
+/* Información del videojuego */
+.info-container {
+    flex: 1; /* Ocupa la otra mitad */
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.titulo {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.titulo h1 {
+    color: #ff4800;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Precio y Botón */
+.precio-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.precio {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.precio-oferta {
+    color: #00ff00; /* Verde para precio con descuento */
+    margin-right: 10px;
+}
+
+.precio-original {
+    text-decoration: line-through;
+    color: #ff5733; /* Rojo para el precio original tachado */
+}
+
+.precio-normal {
+    color: #ffffff; /* Blanco para el precio normal */
+}
+
+.agregar-carrito {
+    padding: 10px 20px;
+    background-color: #2c6900; /* Color para el botón */
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.agregar-carrito:hover {
+    background-color: #0f8721; /* Color de hover del botón */
+}
+
+/* Descripción y Categoría */
+.descripcion-container {
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ffffff;
+}
+
+.categoria {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f0a500; /* Color para la categoría */
+    margin-top: 30px;
+}
+
+
+@media (min-width: 576px) {
+    .detalle-videojuego {
+      max-width: 540px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .detalle-videojuego {
+      max-width: 720px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .detalle-videojuego {
+      max-width: 960px;
+    }
+  }
+  
+
+  

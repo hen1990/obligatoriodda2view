@@ -28,8 +28,6 @@ const Login = ({ setUser }) => {
       body: JSON.stringify({ email, password }),
     });
 
-
-    
     if (response.ok) {console.log("response: " + response)
       const userData = await response.json();
       localStorage.setItem('user', JSON.stringify(userData));

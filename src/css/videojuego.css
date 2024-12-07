@@ -41,9 +41,13 @@
 }
 
 .videojuegos-title {
-  color: #ff0000;
-  /* Rojo gamer */
-  margin-bottom: 2rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  margin-bottom: 15px;
+  color: #ff4800;
+  font-size: 2rem;
+  text-align: center;
 }
 
 /* Cards Container */
@@ -70,7 +74,6 @@
 .card:hover {
   transform: scale(1.05);
   animation: glowAnimation 4s infinite;
-  /*box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);*/
 }
 
 @keyframes glowAnimation {
@@ -160,5 +163,10 @@
 .precio-oferta {
   color: #00ff00;
   margin-left: 10px;
-  /* Verde para descuento premium */
+}
+
+
+.link-card {
+  text-decoration: none; 
+  color: inherit; 
 }

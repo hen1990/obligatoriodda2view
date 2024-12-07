@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "../css/videojuego.css";
+import { Link } from "react-router-dom";
 
 
 const VideojuegoCard = ({ juego, isPremium }) => {
@@ -11,6 +12,7 @@ const VideojuegoCard = ({ juego, isPremium }) => {
     };
 
     return (
+        <Link to={`/videojuego/${juego.id}`} className="link-card"> 
         <div
             className="card"
             onMouseEnter={() => setHover(true)}
@@ -48,6 +50,7 @@ const VideojuegoCard = ({ juego, isPremium }) => {
                 </p>
             </div>
         </div>
+        </Link>
     );
 };
 

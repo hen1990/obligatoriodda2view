@@ -93,7 +93,7 @@ const Registro = () => {
           >
             {tiposUsuario.map((tipo) => (
               <option key={tipo.id} value={tipo.id}>
-                {tipo.nombreTipoUsuario} {/* Ajusta para usar el nombre del tipo de usuario */}
+                {tipo.nombreTipoUsuario}
               </option>
             ))}
           </select>
@@ -102,7 +102,6 @@ const Registro = () => {
           {userData.tipoUsuario.id === 2 && (
             <>
               <input type="text" name="tarjetaCredito" placeholder="Tarjeta de Crédito" onChange={handleChange} required />
-              <input type="number" name="descuento" placeholder="Descuento" onChange={handleChange} />
             </>
           )}
 

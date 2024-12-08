@@ -11,7 +11,7 @@ function MisCompras({ user }) {
     if (!existeUsuario) {
         window.location.href = '/';
     }
-    
+
     const [compras, setCompras] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -40,7 +40,17 @@ function MisCompras({ user }) {
     }
 
     if (!compras || compras.length === 0) {
-        return <p>No tienes compras registradas.</p>;
+
+        return (
+            <div className="mis-compras-container">
+                 <h1>Mis Compras</h1>
+                 <div className="compra-card">
+                <h3 className="vacio_h3">No tienes compras registradas.</h3>
+                <p className="vacio_p">Explora nuestros productos y comienza a comprar para disfrutar de tus juegos favoritos.
+                     Hazte PREMIUM para obtener las mejores ofertas!!!</p>
+            </div>
+            </div>
+        );
     }
 
     return (

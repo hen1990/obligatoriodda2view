@@ -2,12 +2,18 @@
 
 /* Container */
 .videojuegos-container {
-  width: 100%; /* Ocupa todo el ancho */
-  padding-right: 15px; /* Padding lateral, igual al de Bootstrap */
+  padding: 20px;
+  color: #fff;
+  width: 100%;
+  /* Ocupa todo el ancho */
+  padding-right: 15px;
+  /* Padding lateral, igual al de Bootstrap */
   padding-left: 15px;
   padding-bottom: 50px;
-  margin-right: auto; /* Centra el contenido en caso de viewport grande */
+  margin-right: auto;
+  /* Centra el contenido en caso de viewport grande */
   margin-left: auto;
+  /*min-height: 100vh;*/
 }
 
 @media (min-width: 576px) {
@@ -25,18 +31,6 @@
 @media (min-width: 992px) {
   .videojuegos-container {
     max-width: 960px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .videojuegos-container {
-    max-width: 1140px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .videojuegos-container {
-    max-width: 1320px;
   }
 }
 

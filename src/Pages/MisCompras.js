@@ -1,23 +1,32 @@
 import React, { useEffect, useState } from "react";
 import "../css/misCompras.css";
+import { useParams } from "react-router-dom";
 
 function MisCompras({ user }) {
     //Verificacion en el local Storage
+    const { id } = useParams();
     const [existeUsuario, setexisteUsuario] = useState(() => {
         const storedUser = localStorage.getItem('user');
         return storedUser ? JSON.parse(storedUser) : null;
     });
 
-    if (!existeUsuario) {
-        window.location.href = '/';
-    }
-    
+    const [admin, setAdmin] = useState(() => {
+        const storedAdmin = localStorage.getItem('admin');
+        return storedAdmin ? JSON.parse(storedAdmin) : null;
+      });
+
+    if (!admin) {
+        if (!existeUsuario) {
+            window.location.href = '/';
+        }
+    } 
+
     const [compras, setCompras] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        if (user && user.id) {
-            fetch(`http://localhost:5001/compra/${user.id}`)
+        if (id) {
+            fetch(`http://localhost:5001/compra/${id}`)
                 .then((response) => {
                     if (!response.ok) {
                         throw new Error("Error al obtener las compras");
@@ -33,19 +42,29 @@ function MisCompras({ user }) {
                     setLoading(false);
                 });
         }
-    }, [user]);
+    }, [id]);
 
     if (loading) {
         return <p>Cargando...</p>;
     }
 
     if (!compras || compras.length === 0) {
-        return <p>No tienes compras registradas.</p>;
+
+        return (
+            <div className="mis-compras-container">
+                 <h1>Mis Compras</h1>
+                 <div className="compra-card">
+                <h3 className="vacio_h3">No tienes compras registradas.</h3>
+                <p className="vacio_p">Explora nuestros productos y comienza a comprar para disfrutar de tus juegos favoritos.
+                     Hazte PREMIUM para obtener las mejores ofertas!!!</p>
+            </div>
+            </div>
+        );
     }
 
     return (
         <div className="mis-compras-container">
-            <h1>Mis Compras</h1>
+            <h1>Compras</h1>
             {compras.map((compra, index) => (
                 <div key={index} className="compra-card">
                     <h2>Compra realizada el: {new Date(compra.fechaCompra).toLocaleString()}</h2>

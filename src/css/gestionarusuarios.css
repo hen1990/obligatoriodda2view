@@ -1,0 +1,90 @@
+.usuarios-container {
+    padding: 20px;
+    color: #fff;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 50px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .usuarios-container h1 {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    margin-bottom: 15px;
+    color: #ff4800;
+    font-size: 2rem;
+  }
+  
+  .filtro-container {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .filtro-container select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #292828;
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: 0 0 5px rgb(255, 0, 0);
+  }
+  
+  .usuarios-list {
+    margin-top: 20px;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #292828;
+    box-shadow: 0 0 5px rgb(255, 0, 0);
+  }
+  
+  .usuario-item {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgb(255, 0, 0);
+  }
+  
+  .usuario-detalles {
+    flex-grow: 1;
+  }
+  
+  .usuario-detalles h2 {
+    color: #ffd500;
+    margin: 0;
+  }
+  
+  .usuario-detalles p {
+    margin: 0.5rem 0;
+  }
+  
+  .usuario-boton .ver-compras {
+    padding: 10px 20px;
+    color: white;
+    background-color: #ff4800;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .usuario-boton .ver-compras:hover {
+    background-color: #e33d00;
+  }
+  
+  .vacio_h3 {
+    margin: 20px;
+    padding: 20px;
+    color: #ffd500;
+    font-size: 1.3rem;
+  }
+  

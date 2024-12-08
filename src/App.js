@@ -9,12 +9,20 @@ import MiCarrito from './Pages/MiCarrito';
 import MisCompras from './Pages/MisCompras';
 import MiPerfil from './Pages/miPerfil';
 import Navbar from './navbar';
+import RegistroVideojuego from './Pages/AdministrarJuego';
+import Administrador  from './Pages/Administrador';
+import GestionarUsuarios from './Pages/GestionarUsuarios';
+import Categoria from './Pages/Categorias';
 
 
 function App() {
   const [user, setUser] = useState(() => {
     const storedUser = localStorage.getItem('user');
     return storedUser ? JSON.parse(storedUser) : null;
+  });
+  const [admin, setAdmin] = useState(() => {
+    const storedAdmin = localStorage.getItem('admin');
+    return storedAdmin ? JSON.parse(storedAdmin) : null;
   });
 
   const agregarAlCarrito = (juego) => {
@@ -48,15 +56,20 @@ useEffect(() => {
 
   return (
     <Router>
-      <Navbar user={user} carrito={carrito}/>
+      <Navbar admin={admin} user={user} carrito={carrito}/>
       <Routes>
         <Route path="/" element={<Login setUser={setUser}  />} />
         <Route path="/registro" element={<Register />} />
         <Route path="/videojuego" element={<Videojuegos user={user} />} />
         <Route path="/videojuego/:id" element={<DetalleVideojuego user={user} agregarAlCarrito={agregarAlCarrito} />} />
         <Route path="/miCarrito" element={<MiCarrito user={user} carrito={carrito} setCarrito={setCarrito} />} />
-        <Route path="/mis-compras" element={<MisCompras user={user} />} />
+        <Route path="/mis-compras/:id" element={<MisCompras user={user} />} />
+        <Route path="/administrarjuego" element={<RegistroVideojuego/>} />
+        <Route path="/administrador" element={<Administrador />} />
+        <Route path='/gestionarusuario' element={<GestionarUsuarios/>} />
         <Route path="/miPerfil" element={<MiPerfil user={user} setUser={setUser} />} />
+
+        <Route path="/categoria" element={<Categoria />} />
        
       </Routes>
     </Router>

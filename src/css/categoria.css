@@ -11,7 +11,6 @@
     margin-right: auto;
     /* Centra el contenido en caso de viewport grande */
     margin-left: auto;
-    min-height: 100vh;
 }
 
 /* Título */
@@ -39,16 +38,17 @@
 }
 
 .agregar-categoria input {
+    margin-top: 14px;
     flex: 1;
     padding: 10px;
     margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-    width: 50%;
 }
 
 .agregar-categoria button {
+    width: 40%;
     padding: 10px 20px;
     background-color: #2c6900;
     border: none;
@@ -140,31 +140,8 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.categoria-item .guardar {
-    background-color: #317f20;
-    color: #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.categoria-item .guardar:hover {
-    background-color: #246914;
-    box-shadow: 0 0 12px rgba(19, 123, 7, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.categoria-item .cancelar {
-    background-color: #dc5935;
-    color: #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.categoria-item .cancelar:hover {
-    background-color: #ba5320;
-    box-shadow: 0 0 10px rgba(202, 80, 40, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 .categoria-detalles input {
+    margin-top: 16px;
     font-size: 1.2rem;
     font-weight: bold;
     color: #000000;

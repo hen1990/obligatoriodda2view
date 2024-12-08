@@ -5,10 +5,10 @@ const RegistroVideojuego = () => {
   const [videojuegoData, setVideojuegoData] = useState({
     nombre: '',
     descripcion: '',
-    precio: 0,
+    precio: '',
     imagen: '',
-    cantidadCopias: 0,
-    descuento: 0,
+    cantidadCopias: '',
+    descuento: '',
     categoria: { id: 1 },
   });
 
@@ -120,6 +120,9 @@ const RegistroVideojuego = () => {
 
   return (
     <div className="register-container">
+       <h1>Gestión de Categorías</h1>
+   
+    <div className="register-container2">
       <div className="register-form-container">
         <form onSubmit={handleRegister}>
           <input
@@ -200,16 +203,20 @@ const RegistroVideojuego = () => {
         <ul>
           {filteredVideojuegos.map((videojuego) => (
             <li key={videojuego.id}>
-              <div>
-                <strong>{videojuego.nombre}</strong> - {videojuego.precio} $
-                <p>Cantidad de copias: {videojuego.cantidadCopias}</p>
-                <button onClick={() => handleEdit(videojuego)}>Editar</button>
-                <button onClick={() => handleDelete(videojuego.id)}>Eliminar</button>
+                <img src={videojuego.imagen} alt={videojuego.nombre} className="juego-list-imagen" />
+              <div className='videojuegos-list-item'>
+                <strong>{videojuego.nombre}</strong> {videojuego.precio} $
+                <p>Copias: {videojuego.cantidadCopias}</p>
+                </div>
+                <div className='videojuegos-list-contenedor-botones'>
+                <button className='editar' onClick={() => handleEdit(videojuego)}>Editar</button>
+                <button className='eliminar' onClick={() => handleDelete(videojuego.id)}>Eliminar</button>
               </div>
             </li>
           ))}
         </ul>
       </div>
+    </div>
     </div>
   );
 };

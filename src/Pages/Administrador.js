@@ -41,36 +41,38 @@ function AdminLogin() {
     };
 
     return (
-        <div className="admin-login">
-            <h2>Iniciar sesión como administrador</h2>
-            {success ? (
-                <div className="success-message">¡Inicio de sesión exitoso!</div>
-            ) : (
-                <form onSubmit={handleLogin}>
-                    <div className="form-group">
-                        <label htmlFor="email">Correo electrónico:</label>
-                        <input
-                            type="email"
-                            id="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="password">Contraseña:</label>
-                        <input
-                            type="password"
-                            id="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                        />
-                    </div>
-                    {error && <div className="error-message">{error}</div>}
-                    <button type="submit">Iniciar sesión</button>
-                </form>
-            )}
+        <div className="admin-login-container">
+            <div className="admin-login">
+                <h2>Iniciar sesión como administrador</h2>
+                {success ? (
+                    <div className="success-message">¡Inicio de sesión exitoso!</div>
+                ) : (
+                    <form onSubmit={handleLogin}>
+                        <div className="form-group">
+                            <input
+                                type="email"
+                                  placeholder="Email"
+                                id="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="form-group">
+                             <input
+                                type="password"
+                                placeholder="Contraseña"
+                                id="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </div>
+                        {error && <div className="error-message">{error}</div>}
+                        <button type="submit">Iniciar sesión</button>
+                    </form>
+                )}
+            </div>
         </div>
     );
 }

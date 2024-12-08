@@ -38,6 +38,8 @@
 }
 
 .navbar-links li {
+  margin-top: 5px;
+  width: 100px;
   display: inline;
 }
 
@@ -47,6 +49,7 @@
 }
 
 .logout-button {
+  width: 130px;
   background-color: #ff4d4d;
   color: white;
   border: none;
@@ -60,7 +63,7 @@
 }
 
 /* Estilos responsivos */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .navbar-toggle {
     display: block;
   }

@@ -76,8 +76,8 @@ const Registro = () => {
   };
 
   return (
-    <div className="register-container">
-      <div className="register-form-container">
+    <div className="registro-container">
+      <div className="registro-form-container">
         <form onSubmit={handleRegister}>
           <input type="text" name="nombre" placeholder="Nombre" onChange={handleChange} required />
           <input type="text" name="apellido" placeholder="Apellido" onChange={handleChange} required />

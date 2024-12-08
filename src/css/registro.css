@@ -1,16 +1,5 @@
-/* General Body Styling for Register */
-body {
-    margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    /* Fuente estilo gamer */
-    background-color: #1b1b1b;
-    /* Fondo oscuro */
-    color: #e0e0e0;
-    /* Texto en gris claro */
-}
-
 /* Container Styling */
-.register-container {
+.registro-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +7,7 @@ body {
     margin: 0px 10px;
 }
 
-.register-form-container {
+.registro-form-container {
     background-color: #2a2a2a;
     padding: 2rem;
     border-radius: 10px;
@@ -40,8 +29,7 @@ form label {
 }
 
 form input,
-form select,
-form button {
+form select {
     font-family: 'Orbitron', sans-serif;
     font-size: 1rem;
     padding: 0.75rem;
@@ -52,19 +40,13 @@ form button {
     transition: all 0.3s ease-in-out;
 }
 
-form input,
-form select {
-    background-color: #333333;
-    color: #e0e0e0;
-    border: 1px solid #444444;
-}
-
 form input:focus,
 form select:focus {
     border-color: #ff0000;
     /* Borde rojo al seleccionar */
     box-shadow: 0 0 5px #ff0000;
 }
+
 
 form button {
     background-color: #ff0000;

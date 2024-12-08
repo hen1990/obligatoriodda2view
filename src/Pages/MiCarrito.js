@@ -120,9 +120,9 @@ function MiCarrito({ user, carrito, setCarrito }) {
                                             "$U" + juego.precio
                                         )}
                                     </p>
-                                    <button onClick={() => eliminarDelCarrito(juego.id)}>Eliminar</button>
+                                    <button className='eliminar' onClick={() => eliminarDelCarrito(juego.id)}>Eliminar</button>
                                     <span> {juego.cantidad} copia/s </span>
-                                    <button onClick={() => agregarCopia(juego.id)}> + </button>
+                                    <button className='sumar' onClick={() => agregarCopia(juego.id)}> + </button>
                                 </div>
                             </li>
                         ))}

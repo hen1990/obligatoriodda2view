@@ -1,0 +1,145 @@
+.register-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #fff;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  }
+  
+  .register-form-container {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #292828;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(255, 0, 0);
+  }
+  
+  .register-form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .register-form-container input,
+  .register-form-container textarea,
+  .register-form-container select {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .register-form-container button {
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .register-form-container button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  .filter-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .filter-container label {
+    font-size: 1rem;
+    color: #ffd500;
+  }
+  
+  .filter-container input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .videojuegos-list {
+    padding: 20px;
+    background-color: #292828;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(255, 0, 0);
+  }
+  
+  .videojuegos-list h2 {
+    text-align: center;
+    color: #ffd500;
+    margin-bottom: 20px;
+  }
+  
+  .videojuegos-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .videojuegos-list li {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #333;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .videojuegos-list li strong {
+    color: #ffd500;
+    font-size: 1.2rem;
+  }
+  
+  .videojuegos-list li p {
+    margin: 0;
+    color: #fff;
+  }
+  
+  .videojuegos-list button {
+    padding: 10px;
+    font-size: 0.9rem;
+    color: white;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .videojuegos-list button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  @media (min-width: 768px) {
+    .register-form-container form {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  
+    .register-form-container input,
+    .register-form-container textarea,
+    .register-form-container select {
+      flex: 1 1 calc(50% - 20px);
+    }
+  
+    .filter-container {
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+  

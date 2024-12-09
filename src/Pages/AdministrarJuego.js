@@ -16,6 +16,8 @@ const RegistroVideojuego = () => {
   const [categorias, setCategorias] = useState([]);
   const [editingVideojuego, setEditingVideojuego] = useState(null);
   const [filtroCantidad, setFiltroCantidad] = useState(50);
+  const [editando, setEditando] = useState(false);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -114,16 +116,30 @@ const RegistroVideojuego = () => {
     setVideojuegoData(videojuego);
   };
 
+  const handleCancelar = () => {
+    setEditingVideojuego('');
+setVideojuegoData({
+  nombre: '',
+  descripcion: '',
+  precio: 0,
+  imagen: '',
+  cantidadCopias: 0,
+  descuento: 0,
+  categoria: { id: 1 },})
+
+  };
+
   const filteredVideojuegos = videojuegos.filter(
     (videojuego) => videojuego.cantidadCopias <= filtroCantidad
   );
 
   return (
     <div className="register-container">
-       <h1>Gestión de Categorías</h1>
+       <h1>Gestión de Juegos</h1>
    
     <div className="register-container2">
       <div className="register-form-container">
+      <h2>Agregar Videojuego</h2>
         <form onSubmit={handleRegister}>
           <input
             type="text"
@@ -209,8 +225,15 @@ const RegistroVideojuego = () => {
                 <p>Copias: {videojuego.cantidadCopias}</p>
                 </div>
                 <div className='videojuegos-list-contenedor-botones'>
-                <button className='editar' onClick={() => handleEdit(videojuego)}>Editar</button>
-                <button className='eliminar' onClick={() => handleDelete(videojuego.id)}>Eliminar</button>
+                  
+                {videojuegoData.id != videojuego.id ? 
+                <>
+                 <button className='editar' onClick={() => handleEdit(videojuego)}>Editar</button>
+                 <button className='eliminar' onClick={() => handleDelete(videojuego.id)}>Eliminar</button>
+                </>
+                 :
+                <button className='editar' onClick={() => handleCancelar()}>Cancelar</button>
+                }
               </div>
             </li>
           ))}

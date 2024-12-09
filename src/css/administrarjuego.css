@@ -37,6 +37,12 @@ h1 {
   box-shadow: 0 0 5px rgb(255, 0, 0);
 }
 
+.register-form-container h2 {
+  text-align: center;
+  color: #ffd500;
+  margin-bottom: 20px;
+}
+
 .register-form-container form {
   display: flex;
   flex-direction: column;

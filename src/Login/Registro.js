@@ -67,17 +67,17 @@ const Registro = () => {
         window.location.href = '/';
       } else {
         const errorText = await response.text();
-        alert(`Error al registrar usuario: ${errorText}`);
+        alert(`Error al registrar usuario. ${errorText}`);
       }
     } catch (error) {
-      console.error('Error al registrar usuario:', error);
-      alert('Error al conectar con el servidor');
+      console.error('Error al registrar usuario.', error);
+      alert('Error al conectar con el servidor.');
     }
   };
 
   return (
-    <div className="register-container">
-      <div className="register-form-container">
+    <div className="registro-container">
+      <div className="registro-form-container">
         <form onSubmit={handleRegister}>
           <input type="text" name="nombre" placeholder="Nombre" onChange={handleChange} required />
           <input type="text" name="apellido" placeholder="Apellido" onChange={handleChange} required />

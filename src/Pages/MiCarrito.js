@@ -16,9 +16,9 @@ function MiCarrito({ user, carrito, setCarrito }) {
     const isPremium = user.tipoUsuario.id === 2;
 
     const eliminarDelCarrito = (id) => {
-        setCarrito((prevCarrito) => 
+        setCarrito((prevCarrito) =>
             prevCarrito.map((juego) =>
-                juego.id === id 
+                juego.id === id
                     ? { ...juego, cantidad: juego.cantidad - 1 }
                     : juego
             ).filter((juego) => juego.cantidad > 0) // Eliminar juegos con cantidad <= 0
@@ -26,9 +26,9 @@ function MiCarrito({ user, carrito, setCarrito }) {
     };
 
     const agregarCopia = (id) => {
-        setCarrito((prevCarrito) => 
+        setCarrito((prevCarrito) =>
             prevCarrito.map((juego) =>
-                juego.id === id 
+                juego.id === id
                     ? { ...juego, cantidad: juego.cantidad + 1 }
                     : juego
             )
@@ -42,8 +42,8 @@ function MiCarrito({ user, carrito, setCarrito }) {
     const calcularTotal = () => {
         return carrito.reduce((total, item) => {
             // Si el usuario es Premium, aplica el descuento, de lo contrario usa el precio normal
-            const precioFinal = isPremium 
-                ? item.precio * (1 - (item.descuento || 0) / 100) 
+            const precioFinal = isPremium
+                ? item.precio * (1 - (item.descuento || 0) / 100)
                 : item.precio;
             return total + precioFinal * item.cantidad;
         }, 0).toFixed(2);
@@ -90,7 +90,11 @@ function MiCarrito({ user, carrito, setCarrito }) {
         <div className="mi-carrito">
             <h1>Mi Carrito</h1>
             {carrito.length === 0 ? (
-                <p>Tu carrito está vacío.</p>
+                 <div className="compra-card">
+                <h3 className='vacio_h3'>Tu carrito está vacío.</h3>
+                <p className='vacio_p'>Explora nuestros productos y comienza a comprar para disfrutar de tus juegos favoritos.
+                Hazte PREMIUM para obtener las mejores ofertas!!!</p>
+                </div>
             ) : (
                 <>
                     <ul className="lista-juegos">
@@ -116,22 +120,21 @@ function MiCarrito({ user, carrito, setCarrito }) {
                                             "$U" + juego.precio
                                         )}
                                     </p>
-                                    <button onClick={() => eliminarDelCarrito(juego.id)}>Eliminar</button>
+                                    <button className='eliminar' onClick={() => eliminarDelCarrito(juego.id)}>Eliminar</button>
                                     <span> {juego.cantidad} copia/s </span>
-                                    <button onClick={() => agregarCopia(juego.id)}> + </button>
+                                    <button className='sumar' onClick={() => agregarCopia(juego.id)}> + </button>
                                 </div>
                             </li>
                         ))}
+                        <div className="carrito-footer">
+                            <button className="realizar-compra" onClick={realizarCompra}>
+                                Realizar Compra
+                            </button>
+                            <span className="total-pagar">
+                                Total: $U {calcularTotal()}
+                            </span>
+                        </div>
                     </ul>
-                    <div className="carrito-footer">
-                        <button className="realizar-compra" onClick={realizarCompra}>
-                            Realizar Compra
-                        </button>
-                        <span className="total-pagar">
-                            Total: $U {calcularTotal()}
-                        </span>
-                    </div>
-
                 </>
             )}
         </div>

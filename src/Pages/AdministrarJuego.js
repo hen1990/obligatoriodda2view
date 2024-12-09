@@ -5,10 +5,10 @@ const RegistroVideojuego = () => {
   const [videojuegoData, setVideojuegoData] = useState({
     nombre: '',
     descripcion: '',
-    precio: 0,
+    precio: '',
     imagen: '',
-    cantidadCopias: 0,
-    descuento: 0,
+    cantidadCopias: '',
+    descuento: '',
     categoria: { id: 1 },
   });
 
@@ -16,6 +16,8 @@ const RegistroVideojuego = () => {
   const [categorias, setCategorias] = useState([]);
   const [editingVideojuego, setEditingVideojuego] = useState(null);
   const [filtroCantidad, setFiltroCantidad] = useState(50);
+  const [editando, setEditando] = useState(false);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -114,13 +116,30 @@ const RegistroVideojuego = () => {
     setVideojuegoData(videojuego);
   };
 
+  const handleCancelar = () => {
+    setEditingVideojuego('');
+setVideojuegoData({
+  nombre: '',
+  descripcion: '',
+  precio: 0,
+  imagen: '',
+  cantidadCopias: 0,
+  descuento: 0,
+  categoria: { id: 1 },})
+
+  };
+
   const filteredVideojuegos = videojuegos.filter(
     (videojuego) => videojuego.cantidadCopias <= filtroCantidad
   );
 
   return (
     <div className="register-container">
+       <h1>Gestión de Juegos</h1>
+   
+    <div className="register-container2">
       <div className="register-form-container">
+      <h2>Agregar Videojuego</h2>
         <form onSubmit={handleRegister}>
           <input
             type="text"
@@ -200,16 +219,27 @@ const RegistroVideojuego = () => {
         <ul>
           {filteredVideojuegos.map((videojuego) => (
             <li key={videojuego.id}>
-              <div>
-                <strong>{videojuego.nombre}</strong> - {videojuego.precio} $
-                <p>Cantidad de copias: {videojuego.cantidadCopias}</p>
-                <button onClick={() => handleEdit(videojuego)}>Editar</button>
-                <button onClick={() => handleDelete(videojuego.id)}>Eliminar</button>
+                <img src={videojuego.imagen} alt={videojuego.nombre} className="juego-list-imagen" />
+              <div className='videojuegos-list-item'>
+                <strong>{videojuego.nombre}</strong> {videojuego.precio} $
+                <p>Copias: {videojuego.cantidadCopias}</p>
+                </div>
+                <div className='videojuegos-list-contenedor-botones'>
+                  
+                {videojuegoData.id != videojuego.id ? 
+                <>
+                 <button className='editar' onClick={() => handleEdit(videojuego)}>Editar</button>
+                 <button className='eliminar' onClick={() => handleDelete(videojuego.id)}>Eliminar</button>
+                </>
+                 :
+                <button className='editar' onClick={() => handleCancelar()}>Cancelar</button>
+                }
               </div>
             </li>
           ))}
         </ul>
       </div>
+    </div>
     </div>
   );
 };

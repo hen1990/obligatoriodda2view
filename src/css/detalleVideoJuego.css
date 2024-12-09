@@ -1,5 +1,6 @@
 /* Contenedor principal */
 .detalle-videojuego {
+  margin-top: 5px;
     width: 100%; /* Ocupa todo el ancho */
     padding-right: 15px; /* Padding lateral, igual al de Bootstrap */
     padding-left: 15px;

@@ -52,7 +52,7 @@ function Navbar({ admin, user, carrito }) {
                                         <Link to="/registro">Registro</Link>
                                     </li>
                                     <li>
-                                        <Link to="/administrador">Panel de Administración</Link>
+                                        <Link to="/administrador">Administración</Link>
                                     </li>
                                 </>
                             ) : (

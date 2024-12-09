@@ -21,6 +21,8 @@ function MisCompras({ user }) {
         }
     } 
 
+    const isPremium = user?.tipoUsuario.id === 2;
+
     const [compras, setCompras] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -77,10 +79,19 @@ function MisCompras({ user }) {
                                     <h3>{juego.nombre}</h3>
                                     <p>Género: {juego.categoria.nombre}</p>
                                     <p>Cantidad: {juego.cantidad}</p>
-                                    <p>Precio Unitario: $U{juego.precio.toFixed(2)}</p>
+                                    <p>Precio Unitario: $U{
+                                    isPremium
+                                    ? (juego.precio * (1 - (juego.descuento || 0) / 100)).toFixed(2)
+                                    : juego.precio.toFixed(2)
+                                    
+                                    }</p>
                                     <p>
                                         Subtotal: $U
-                                        {(juego.precio * juego.cantidad).toFixed(2)}
+                                        {
+                                    isPremium ? (juego.precio * (1 - (juego.descuento || 0) / 100)  * juego.cantidad).toFixed(2)
+                                    : (juego.precio * juego.cantidad).toFixed(2)
+                                    
+                                        }
                                     </p>
                                 </div>
                             </div>

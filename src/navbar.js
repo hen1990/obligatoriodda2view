@@ -2,15 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './css/navbar.css';
 
-function Navbar({ user, carrito }) {
+function Navbar({ admin, user, carrito }) {
     const [isOpen, setIsOpen] = useState(false);
-    const [cantidad, setCantidad] = useState();
+    const [cantidad, setCantidad] = useState(0);
 
     useEffect(() => {
-        // Suma todas las cantidades de los juegos en el carrito
-        const totalCantidad = carrito.reduce((contador, juego) => contador + juego.cantidad, 0);
-        setCantidad(totalCantidad);
-    }, [carrito]);
+        if (!admin && carrito) {
+            // Suma todas las cantidades de los juegos en el carrito
+            const totalCantidad = carrito.reduce((contador, juego) => contador + juego.cantidad, 0);
+            setCantidad(totalCantidad);
+        }
+    }, [carrito, admin]);
+
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
@@ -23,56 +26,76 @@ function Navbar({ user, carrito }) {
         return `${nombreInicial}${apellidoInicial}`;
     };
 
-
-
     return (
         <nav className="navbar">
             <Link to="/videojuego" className="navbar-logo">
                 EmiGamesHG
             </Link>
-            {user ? (
-            <li className="user-initials">
-                {getIniciales()} 
-            </li>)
-: ""}
+            {user && (
+                <li className="user-initials">
+                    {getIniciales()}
+                </li>
+            )}
             <div className="navbar-container">
-
                 <button className="navbar-toggle" onClick={toggleMenu}>
                     ☰
                 </button>
                 <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
-                    <li>
-                       {/*X si quiero poner algo */}
-                    </li>
-
-
-                    {!user ? (
+                    {!admin ? (
                         <>
-                            <li>
-                                <Link to="/">Iniciar sesión</Link>
-                            </li>
-                            <li>
-                                <Link to="/registro">Registro</Link>
-                            </li>
+                            {!user ? (
+                                <>
+                                    <li>
+                                        <Link to="/">Iniciar sesión</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/registro">Registro</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/administrador">Administración</Link>
+                                    </li>
+                                </>
+                            ) : (
+                                <>
+                                    <li>
+                                        <Link to="/videojuego">Videojuegos</Link>
+                                    </li>
+                                    <li>
+                                        <Link to={`/mis-compras/${user.id}`}>Mis Compras</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/miCarrito">Mi carrito ({cantidad})</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/miPerfil">Mi Perfil</Link>
+                                    </li>
+                                    <button
+                                        className="logout-button"
+                                        onClick={() => {
+                                            localStorage.removeItem('user');
+                                            window.location.href = '/';
+                                        }}
+                                    >
+                                        Cerrar sesión
+                                    </button>
+                                </>
+                            )}
                         </>
                     ) : (
                         <>
                             <li>
-                                <Link to="/videojuego">Videojuegos</Link>
+                                <Link to="/administrarjuego">Videojuegos</Link>
                             </li>
                             <li>
-                                <Link to="/mis-compras/">Mis Compras</Link>
+                                <Link to="/categoria">Categorias</Link>
                             </li>
                             <li>
-                                <Link to="/miCarrito">Mi carrito ({cantidad})</Link>
-                            </li>
-                            <li>
-                            <Link to="/miPerfil">Mi Perfil</Link>
+                                <Link to="/gestionarusuario">Usuarios</Link>
                             </li>
                             <button
                                 className="logout-button"
                                 onClick={() => {
-                                    localStorage.removeItem('user');
+                                    localStorage.removeItem('admin');
                                     window.location.href = '/';
                                 }}
                             >

@@ -44,7 +44,7 @@ const Login = ({ setUser }) => {
 };
 
   return (
-    <div className="login-container body-fondo">
+    <div className="login-container">
       <div className="login-form-container">
         <h2>Iniciar Sesión</h2>
         <form onSubmit={handleLogin}>

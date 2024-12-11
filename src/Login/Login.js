@@ -22,7 +22,7 @@ const Login = ({ setUser }) => {
     e.preventDefault();
 
     try {
-    const response = await fetch('http://localhost:5001/usuario/login', {
+    const response = await fetch('https://obligatorio2dda.onrender.com/usuario/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),

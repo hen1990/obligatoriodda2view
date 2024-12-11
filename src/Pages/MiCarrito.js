@@ -63,7 +63,7 @@ function MiCarrito({ user, carrito, setCarrito }) {
             })),
         };
 
-        fetch("http://localhost:5001/compra", {
+        fetch("https://obligatorio2dda.onrender.com/compra", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body),

@@ -23,8 +23,8 @@ const RegistroVideojuego = () => {
     const fetchData = async () => {
       try {
         const [categoriasRes, videojuegosRes] = await Promise.all([
-          fetch('http://localhost:5001/categoria'),
-          fetch('http://localhost:5001/videojuego'),
+          fetch('https://obligatorio2dda.onrender.com/categoria'),
+          fetch('https://obligatorio2dda.onrender.com/videojuego'),
         ]);
 
         if (categoriasRes.ok && videojuegosRes.ok) {
@@ -53,8 +53,8 @@ const RegistroVideojuego = () => {
 
     try {
       const url = editingVideojuego
-        ? `http://localhost:5001/videojuego/${editingVideojuego}`
-        : 'http://localhost:5001/videojuego';
+        ? `https://obligatorio2dda.onrender.com/videojuego/${editingVideojuego}`
+        : 'https://obligatorio2dda.onrender.com/videojuego';
 
       const method = editingVideojuego ? 'PUT' : 'POST';
 
@@ -77,7 +77,7 @@ const RegistroVideojuego = () => {
         });
         setEditingVideojuego(null);
 
-        const updatedVideojuegos = await fetch('http://localhost:5001/videojuego').then((res) =>
+        const updatedVideojuegos = await fetch('https://obligatorio2dda.onrender.com/videojuego').then((res) =>
           res.json()
         );
         setVideojuegos(updatedVideojuegos);
@@ -95,7 +95,7 @@ const RegistroVideojuego = () => {
     if (!window.confirm('¿Estás seguro de que deseas eliminar este videojuego?')) return;
 
     try {
-      const response = await fetch(`http://localhost:5001/videojuego/${id}`, {
+      const response = await fetch(`https://obligatorio2dda.onrender.com/videojuego/${id}`, {
         method: 'DELETE',
       });
 

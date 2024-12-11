@@ -9,7 +9,7 @@ function Categorias() {
 
     useEffect(() => {
         // Cargar las categorías al montar el componente
-        fetch("http://localhost:5001/categoria")
+        fetch("https://obligatorio2dda.onrender.com/categoria")
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Error al obtener categorías");
@@ -27,7 +27,7 @@ function Categorias() {
             return;
         }
 
-        fetch("http://localhost:5001/categoria", {
+        fetch("https://obligatorio2dda.onrender.com/categoria", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ nombre: nuevaCategoria }),
@@ -48,7 +48,7 @@ function Categorias() {
 
     // Eliminar una categoría
     const eliminarCategoria = (id) => {
-        fetch(`http://localhost:5001/categoria/${id}`, {
+        fetch(`https://obligatorio2dda.onrender.com/categoria/${id}`, {
             method: "DELETE",
         })
             .then((response) => {
@@ -69,7 +69,7 @@ function Categorias() {
             return;
         }
 
-        fetch(`http://localhost:5001/categoria/${id}`, {
+        fetch(`https://obligatorio2dda.onrender.com/categoria/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ nombre: nombreEditado }),

@@ -19,7 +19,7 @@ const Videojuegos = ({ user }) => {
   useEffect(() => {
     const getVideojuegos = async () => {
       try {
-        const response = await fetch("http://localhost:5001/videojuego");
+        const response = await fetch("https://obligatorio2dda.onrender.com/videojuego");
         if (response.ok) {
           const data = await response.json();
           setVideojuegos(data);

@@ -8,7 +8,7 @@ const UsuariosPage = () => {
 
   // Obtener usuarios desde el servidor
   useEffect(() => {
-    fetch('http://localhost:5001/usuario')
+    fetch('https://obligatorio2dda.onrender.com/usuario')
       .then(response => response.json())
       .then(data => setUsuarios(data))
       .catch(error => console.error('Error al obtener usuarios:', error));

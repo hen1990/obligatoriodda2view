@@ -20,7 +20,7 @@ function DetalleVideojuego({ user, agregarAlCarrito }) {
     const isPremium = user.tipoUsuario.id === 2;
 
     useEffect(() => {
-        fetch(`http://localhost:5001/videojuego/${id}`)
+        fetch(`https://obligatorio2dda.onrender.com/videojuego/${id}`)
             .then((response) => response.json())
             .then((data) => setJuego(data))
             .catch((error) => console.error('Error fetching videojuego:', error));

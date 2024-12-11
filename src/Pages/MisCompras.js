@@ -28,7 +28,7 @@ function MisCompras({ user }) {
 
     useEffect(() => {
         if (id) {
-            fetch(`http://localhost:5001/compra/${id}`)
+            fetch(`https://obligatorio2dda.onrender.com/compra/${id}`)
                 .then((response) => {
                     if (!response.ok) {
                         throw new Error("Error al obtener las compras");

@@ -1,5 +1,5 @@
 export const fetchUsers = async () => {
-    const response = await fetch('http://localhost:5001/usuario');
+    const response = await fetch('https://obligatorio2dda.onrender.com/usuario');
     return response.json();
   };
   

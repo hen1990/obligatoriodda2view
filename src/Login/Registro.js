@@ -20,7 +20,7 @@ const Registro = () => {
   useEffect(() => {
     const fetchTiposUsuario = async () => {
       try {
-        const response = await fetch('http://localhost:5001/tipoUsuario');
+        const response = await fetch('https://obligatorio2dda.onrender.com/tipoUsuario');
         if (response.ok) {
           const data = await response.json();
           setTiposUsuario(data); // Guardar los tipos de usuario en el estado
@@ -56,7 +56,7 @@ const Registro = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5001/usuario', {
+      const response = await fetch('https://obligatorio2dda.onrender.com/usuario', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(dataToSend),

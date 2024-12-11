@@ -25,7 +25,7 @@ function MiPerfil({ user, setUser }) {
             ...(tipoUsuario === 2 && { tarjetaCredito }), // Agregar tarjeta si es Premium
         };
 
-        fetch(`http://localhost:5001/usuario/${user.id}`, {
+        fetch(`https://obligatorio2dda.onrender.com/usuario/${user.id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body),
